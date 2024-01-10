@@ -62,11 +62,11 @@ for linha in tabela.index:
     #Passo 4 - cadastrar produto
     pyautogui.click(x=1138, y=302)
     #codigo
-    codigo = tabela.loc[linha, "codigo"]
+    codigo = tabela.loc[linha, "codigo"] #couxetes
     pyautogui.write(codigo)
     pyautogui.press("tab")
     #marca
-    pyautogui.write(tabela.loc[linha, "marca"])
+    pyautogui.write(tabela.loc[linha, "marca"])  #parenteses e couxetes
     pyautogui.press("tab")
     #tipo
     pyautogui.write(tabela.loc[linha, "tipo"])
@@ -80,8 +80,12 @@ for linha in tabela.index:
     #custo (str)
     pyautogui.write(str(tabela.loc[linha, "custo"]))
     pyautogui.press("tab")
+
     #obs
-    pyautogui.write(tabela.loc[linha, "obs"])
+    obs = tabela.loc[linha, "obs"]
+    if not pandas.isna(obs):  # se ele não 
+      pyautogui.write(obs) # so vai executar se acima for true
+
     pyautogui.press("tab")
     #enviar o produto
     pyautogui.click(x=1203, y=956)
