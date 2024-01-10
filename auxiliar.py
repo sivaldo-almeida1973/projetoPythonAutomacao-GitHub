@@ -5,6 +5,7 @@ time.sleep(5)
 print(pyautogui.position())  #pegar posicao de do mouse
 
 
+
 #          codigo       marca  ... custo               obs
 # 0    MOLO000251    Logitech  ...   6.5               NaN
 # 1    MOLO000192    Logitech  ...   5.0               NaN
